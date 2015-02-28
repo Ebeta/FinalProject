@@ -1,0 +1,57 @@
+<%= form_for(@profile_medication) do |f| %>
+  <% if @profile_medication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile_medication.errors.count, "error") %> prohibited this profile_medication from being saved:</h2>
+
+      <ul>
+      <% @profile_medication.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :profile_id %><br>
+    <%= f.text_field :profile_id %>
+  </div>
+  <div class="field">
+    <%= f.label :medication_id %><br>
+    <%= f.text_field :medication_id %>
+  </div>
+  <div class="field">
+    <%= f.label :startDate %><br>
+    <%= f.datetime_select :startDate %>
+  </div>
+  <div class="field">
+    <%= f.label :endDate %><br>
+    <%= f.datetime_select :endDate %>
+  </div>
+  <div class="field">
+    <%= f.label :count %><br>
+    <%= f.text_field :count %>
+  </div>
+  <div class="field">
+    <%= f.label :unit %><br>
+    <%= f.text_field :unit %>
+  </div>
+  <div class="field">
+    <%= f.label :dose %><br>
+    <%= f.text_field :dose %>
+  </div>
+  <div class="field">
+    <%= f.label :unit %><br>
+    <%= f.text_field :unit %>
+  </div>
+  <div class="field">
+    <%= f.label :frequency %><br>
+    <%= f.text_field :frequency %>
+  </div>
+  <div class="field">
+    <%= f.label :taken %><br>
+    <%= f.check_box :taken %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

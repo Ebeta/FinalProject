@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile_id: 
+  medication_id: 
+  startDate: 2015-02-27 22:04:18
+  endDate: 2015-02-27 22:04:18
+  count: MyString
+  unit: MyString
+  dose: MyString
+  unit: MyString
+  frequency: MyString
+  taken: false
+
+two:
+  profile_id: 
+  medication_id: 
+  startDate: 2015-02-27 22:04:18
+  endDate: 2015-02-27 22:04:18
+  count: MyString
+  unit: MyString
+  dose: MyString
+  unit: MyString
+  frequency: MyString
+  taken: false

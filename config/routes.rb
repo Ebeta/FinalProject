@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :profile_medications
+
+  resources :medications
+
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   get 'home/index'

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @profile_medication.profile %>
+</p>
+
+<p>
+  <strong>Medication:</strong>
+  <%= @profile_medication.medication %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @profile_medication.startDate %>
+</p>
+
+<p>
+  <strong>Enddate:</strong>
+  <%= @profile_medication.endDate %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @profile_medication.count %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @profile_medication.unit %>
+</p>
+
+<p>
+  <strong>Dose:</strong>
+  <%= @profile_medication.dose %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @profile_medication.unit %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @profile_medication.frequency %>
+</p>
+
+<p>
+  <strong>Taken:</strong>
+  <%= @profile_medication.taken %>
+</p>
+
+<%= link_to 'Edit', edit_profile_medication_path(@profile_medication) %> |
+<%= link_to 'Back', profile_medications_path %>
