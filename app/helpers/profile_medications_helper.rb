@@ -1,0 +1,2 @@
+module ProfileMedicationsHelper
+end

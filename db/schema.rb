@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227061859) do
+ActiveRecord::Schema.define(version: 20150228030550) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -46,12 +46,49 @@ ActiveRecord::Schema.define(version: 20150227061859) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "medications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "description"
+    t.text     "specialNotes"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "medications", ["user_id"], name: "index_medications_on_user_id"
+
+  create_table "profile_medications", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.integer  "medication_id"
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.string   "count"
+    t.string   "unit"
+    t.string   "dose"
+    t.string   "frequency"
+    t.boolean  "taken"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "profile_medications", ["medication_id"], name: "index_profile_medications_on_medication_id"
+  add_index "profile_medications", ["profile_id"], name: "index_profile_medications_on_profile_id"
+
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "email"
+    t.string   "age"
+    t.string   "phonenumber"
+    t.string   "contact"
+    t.string   "contactnumber"
+    t.string   "gender"
+    t.string   "picture"
   end
+
+  add_index "profiles", ["email"], name: "index_profiles_on_email", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
